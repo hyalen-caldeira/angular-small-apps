@@ -22,3 +22,7 @@ xxxxxxxxx
 
 Tech Stack
 ==========
+* node js
+* http-server
+* json-server
+* AngularJS
