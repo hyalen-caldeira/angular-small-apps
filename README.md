@@ -20,6 +20,8 @@ xxxxxxxxx
   * You must run the `http-server` app from your main project folder to have your application working as a server. This way you don't have to specify `index.html` in the URL because that is  the default file served when a directory is accessed.
 * npm install json-server -g
   * After install, verify if everything is ok typing `json-server` on command line
+* Use the https://api.randomuser.me/ to randomly create json examples. This website is a fake user API that returns a user object with some random fake (but real-looking) data
+* Bootstrap - http://getbootstrap.com
 
 Tech Stack
 ==========
@@ -27,3 +29,4 @@ Tech Stack
 * http-server
 * json-server
 * AngularJS
+* Bootstrap
