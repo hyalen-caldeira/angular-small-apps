@@ -1,4 +1,4 @@
-# angular-small-samples
+# angular-small-apps
 
 Objective
 =========
