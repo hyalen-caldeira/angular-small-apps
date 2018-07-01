@@ -10,26 +10,42 @@
 </head>
 
 <body>
-    <h1>Contact App</h1>
+    <div ng-controller="headerController as header">
+        <h1>{{header.appValueSrvc}}</h1>
+    </div>
     <div class="container" ng-controller="contactController as ctrl">
+        <h1>Contact App</h1>
         <div class="row">
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="contact in ctrl.contacts">
+                <li class="list-group-item" ng-repeat="contact in ctrl.contacts" ng-click="ctrl.selectContact($index)">
                     <span>{{contact.name.title + " " + contact.name.first + " " + contact.name.last}}</span>
                 </li>
             </ul>
         </div>
         <div class="row">
             <div class="media">
-                <img class="mr-3" src=".../64x64" alt="Generic placeholder image">
+                <img class="mr-3" ng-src="{{ctrl.selectedContact.picture.medium}}" alt="Generic placeholder image"></img>
                 <div class="media-body">
-                    <h5 class="mt-0">Media heading</h5>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-                    vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-                    congue felis in faucibus.
+                    <h5 class="mt-0">{{ctrl.selectedContact.name.first + " " + ctrl.selectedContact.name.last}}</h5>
+                    <div>
+                        <P>
+                            <h6>Location</h6>
+                            {{ctrl.selectedContact.location.street + " " + ctrl.selectedContact.location.city + " " + ctrl.selectedContact.location.state}}
+                        </p>
+                    </div>
+                    <div>
+                        <P>
+                            <h6>Phone</h6>
+                            {{ctrl.selectedContact.phone + ", " + ctrl.selectedContact.cell}}
+                        </P>
+                    </div>
                 </div>
             </div>
+            
         </div>
+    </div>
+    <div ng-controller="footerController as footer">
+        <h1>{{footer.appValueSrvc}}</h1>
     </div>
 </body>
 
