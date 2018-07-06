@@ -29,4 +29,13 @@ Tech Stack
 * http-server
 * json-server
 * AngularJS
+  * angular.module
+    * controller
+    * constant
+    * value
+    * factory
+  * nesteed controller
+  * scope
+  * service
+  * ng-model, ng-select, ng-bind, ng-controller, ng-repeat, ng-click, ng-show, ng-hide
 * Bootstrap
