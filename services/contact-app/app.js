@@ -1,14 +1,44 @@
 var app = angular.module("contactApp", []);
 
+// Will be called by dependency inject
 app.controller("contactController", contactController);
 app.controller("headerController", headerController);
 app.controller("footerController", footerController);
 
+// Will be called by dependency inject
+app.factory("appDataFactorySrvc", prepareAppConfig); // Execute the prepareAppConfig and return the value
+app.service("appDataServiceSrvc", AppConfig); // Execute the constructor --> new prepareAppConfig()
 app.constant("appValueSrvc", "Value Service");
 app.constant("appObjectSrvc", {"firstName":"Hyalen", "lastName":"Moreira"});
 app.value("appFunctionSrvc", function(value) {
     console.log(value);
 });
+
+// appFunctionSrvc is dependency injected
+function prepareAppConfig(appFunctionSrvc) {
+    var value = {};
+
+    value.name = "Hyalen Moreira";
+    value.author = "Gabriela Gontijo";
+    value.builtDate = new Date().toDateString();
+
+    appFunctionSrvc("I'll be dependency injected ...");
+
+    return value;
+}
+
+// Construction function --> can be called by new AppConfig()
+function AppConfig(appFunctionSrvc) {
+    // JS adds this line --> var this = {};
+
+    this.name = "Gabriela";
+    this.author = "Gontijo";
+    this.builtDate = new Date().toDateString();
+
+    appFunctionSrvc("I'm construction function ...");
+
+    // JS adds this line --> return this;
+}
 
 function contactController() {
     this.contacts = [
@@ -125,12 +155,13 @@ function contactController() {
     }
 }
 
-function headerController(appValueSrvc, appFunctionSrvc, appObjectSrvc) {
-    this.appValueSrvc = appValueSrvc;
+function headerController(appValueSrvc, appFunctionSrvc, appObjectSrvc, appDataFactorySrvc) {
     appFunctionSrvc("I'm on header ... " + appObjectSrvc.firstName);
+    this.appValueSrvc = appDataFactorySrvc.name;
 }
 
-function footerController(appValueSrvc, appFunctionSrvc, appObjectSrvc) {
-    this.appValueSrvc = appValueSrvc;
+function footerController(appValueSrvc, appFunctionSrvc, appObjectSrvc, appDataServiceSrvc) {
+    // this.appValueSrvc = appValueSrvc;
     appFunctionSrvc("I'm on footer ... " + appObjectSrvc.lastName);
+    this.appValueSrvc = appDataServiceSrvc.name;
 }
