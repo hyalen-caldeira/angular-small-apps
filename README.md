@@ -28,6 +28,7 @@ Tech Stack
 * node js
 * http-server
 * json-server
+  * http://localhost:3000/contacts or http://localhost:3000/contacts/1
 * AngularJS
   * angular.module
     * controller
