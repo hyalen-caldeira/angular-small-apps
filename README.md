@@ -39,5 +39,5 @@ Tech Stack
   * nesteed controller
   * scope
   * service
-  * ng-model, ng-select, ng-bind, ng-controller, ng-repeat, ng-click, ng-show, ng-hide, ng-class, ng-include
+  * ng-model, ng-select, ng-bind, ng-controller, ng-repeat, ng-click, ng-show, ng-hide, ng-class, ng-include, ng-style, ng-table, ng-if
 * Bootstrap
