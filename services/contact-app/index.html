@@ -23,32 +23,56 @@
     <div class="container" ng-controller="contactController as ctrl">
         <h1>Contact App</h1>
         <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="contact in ctrl.contacts" ng-click="ctrl.selectContact($index)">
-                    <span>{{contact.name.title + " " + contact.name.first + " " + contact.name.last}}</span>
-                </li>
-            </ul>
-        </div>
-        <div class="row">
-            <div class="media">
-                <img class="mr-3" ng-src="{{ctrl.selectedContact.picture.medium}}" alt="Generic placeholder image"></img>
-                <div class="media-body">
-                    <h5 class="mt-0">{{ctrl.selectedContact.name.first + " " + ctrl.selectedContact.name.last}}</h5>
-                    <div>
-                        <P>
-                            <h6>Location</h6>
-                            {{ctrl.selectedContact.location.street + " " + ctrl.selectedContact.location.city + " " + ctrl.selectedContact.location.state}}
-                        </p>
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="contact in ctrl.contacts" ng-click="ctrl.selectContact($index)">
+                        <span>{{contact.name.title + " " + contact.name.first + " " + contact.name.last}}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="alert alert-success" ng-if="ctrl.successMessage">{{ctrl.successMessage}}</div>
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img ng-src="{{ctrl.selectedContact.picture.medium}}"></img>
+                        </a>
                     </div>
-                    <div>
-                        <P>
-                            <h6>Phone</h6>
-                            {{ctrl.selectedContact.phone + ", " + ctrl.selectedContact.cell}}
-                        </P>
+                    <div class="media-body">
+                        <h5 class="mt-0">{{ctrl.selectedContact.name.first + " " + ctrl.selectedContact.name.last}}</h5>
+                        <button ng-hide="ctrl.editMode" ng-click="ctrl.toggleEditMode()">Edit</button>
+                        <button ng-show="ctrl.editMode" ng-click="ctrl.saveUser()">Save</button>
+                        <div>
+                            <P>
+                                <h6>Location</h6>
+                            </p>
+                            <p>
+                                <span>Street:</span>
+                                <span ng-hide="ctrl.editMode">{{ctrl.selectedContact.location.street}}</span>
+                                <input type="text" ng-show="ctrl.editMode" ng-model="ctrl.selectedContact.location.street">
+                            </p>
+                            <p>
+                                <span>City:</span>
+                                <span ng-hide="ctrl.editMode">{{ctrl.selectedContact.location.city}}</span>
+                                <input type="text" ng-show="ctrl.editMode" ng-model="ctrl.selectedContact.location.city">
+                            </p>
+                            <p>
+                                <span>State:</span>
+                                <span ng-hide="ctrl.editMode">{{ctrl.selectedContact.location.state}}</span>
+                                <input type="text" ng-show="ctrl.editMode" ng-model="ctrl.selectedContact.location.state">
+                            </p>
+                        </div>
+                        <div>
+                            <P>
+                                <span>Phone:</span>
+                                <span ng-hide="ctrl.editMode">{{ctrl.selectedContact.cell}}</span>
+                                <input type="text" ng-show="ctrl.editMode" ng-model="ctrl.selectedContact.cell">
+                            </P>
+                        </div>
                     </div>
                 </div>
+
             </div>
-            
         </div>
     </div>
     <div ng-controller="footerController as footer">
