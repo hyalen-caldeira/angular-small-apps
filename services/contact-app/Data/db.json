@@ -97,6 +97,19 @@
         "thumbnail": "https://randomuser.me/api/portraits/thumb/women/34.jpg"
       },
       "nat": "CH"
+    },
+    {
+      "id": "22:48:59 GMT-0700 (Horário de Verão do Pacífico)",
+      "name": {
+        "first": "Igor",
+        "last": "Caldeira"
+      },
+      "location": {
+        "street": "Thomaz Naves",
+        "city": "Belo Horizonte",
+        "state": "Minas Gerais"
+      },
+      "cell": "934902402"
     }
   ]
 }

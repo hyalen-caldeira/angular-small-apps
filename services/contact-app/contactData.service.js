@@ -22,6 +22,13 @@
                         console.log(response);
                     });
             }
+
+            self.createUser = function(userData) {
+                return $http.post("http://localhost:3000/contacts/", userData)
+                    .then(function (response) {
+                        console.log(response);
+                    });
+            }
         }
     );
 })();
