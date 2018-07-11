@@ -3,10 +3,11 @@
 Objective
 =========
 
-Use AngularJS basic functionalities
+To use AngularJS basic functionalities
 
 Evaluation Areas
 ================
+RESTful endpoints, Design Patterns, HTML and Bootstrap
 
 Requirements
 ============
@@ -14,7 +15,7 @@ Requirements
 Make some basic examples creating AngularJS small apps. The goal is to have the AngularJS MVC pattern implemented.
 
 ### Task 2) ###
-Create an small app where is possible to perform CRUD. The app should use Bootstrap, http-server, json-server and a more advanced AngularJS features, like $http, Service, 
+Create a small app where is possible to perform CRUD operations. The app should use Bootstrap, http-server, json-server and a more advanced AngularJS features, like $http, Service, 
 
 #### Tools ####
 * npm install http-server -g
