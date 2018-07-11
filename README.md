@@ -3,16 +3,18 @@
 Objective
 =========
 
+Use AngularJS basic functionalities
+
 Evaluation Areas
 ================
 
 Requirements
 ============
 ### Task 1) ###
-xxxxxxxxx
+Make some basic examples creating AngularJS small apps. The goal is to have the AngularJS MVC pattern implemented.
 
 ### Task 2) ###
-xxxxxxxxx
+Create an small app where is possible to perform CRUD. The app should use Bootstrap, http-server, json-server and a more advanced AngularJS features, like $http, Service, 
 
 #### Tools ####
 * npm install http-server -g
